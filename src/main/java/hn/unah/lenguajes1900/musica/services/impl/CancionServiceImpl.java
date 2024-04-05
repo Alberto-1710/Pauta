@@ -17,8 +17,8 @@ public class CancionServiceImpl implements CancionService{
     @Autowired
     private CancionRepository cancionRepository;
 
-    @Autowired
-    private ArtistasRepository artistasRepository;
+    //@Autowired
+    //private ArtistasRepository artistasRepository;
 
     @Override
     public List<Canciones> buscarCancion(long codigoArtista) {
@@ -52,7 +52,7 @@ public class CancionServiceImpl implements CancionService{
 
         if(null!= this.cancionRepository.findById(nvaCancion.getCodigoCancion())){
             nvoArtista.setCodigoArtista(nvoArtista.getCodigoArtista());
-            nvaCancion.getTitulo();
+            nvaCancion.getArtistas();
             nvaCancion.getAlbum();
             nvaCancion.getAnyolanzamiento();
             this.cancionRepository.save(nvaCancion);
